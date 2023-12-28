@@ -9,8 +9,10 @@
   const secret = 'uwu';
 
   function onGo() {
-    const ciphertext = CryptoJS.AES.encrypt(input || 'Say yes!', secret);
-    window.location.href = `${window.location.pathname}?q=${ciphertext}`;
+    const ciphertext = CryptoJS.Rabbit.encrypt(input || 'Say yes!', secret);
+    window.location.href = `${window.location.pathname}?q=${encodeURIComponent(
+      ciphertext
+    )}`;
   }
 
   let celebrating = false;
@@ -32,7 +34,7 @@
     const params = new URLSearchParams(window.location.search);
     const q = params.get('q');
     if (q) {
-      const bytes = CryptoJS.AES.decrypt(q, secret);
+      const bytes = CryptoJS.Rabbit.decrypt(decodeURIComponent(q), secret);
       question = bytes.toString(CryptoJS.enc.Utf8);
     }
   });
