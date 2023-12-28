@@ -40,7 +40,9 @@
   });
 </script>
 
-<div class="relative flex-1 flex flex-col gap-8 justify-center items-center">
+<div
+  class="relative p-4 flex-1 flex flex-col gap-8 justify-center items-center"
+>
   {#if celebrating}
     <div class="grid grid-cols-2 h-[20rem]">
       <img
