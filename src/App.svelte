@@ -6,8 +6,9 @@
   let input = '';
 
   function onGo() {
-    console.log(input);
-    window.location.href = `/?q=${input || 'Say yes!'}`;
+    window.location.href = `${window.location.pathname}?q=${
+      input || 'Say yes!'
+    }`;
   }
 
   let celebrating = false;
