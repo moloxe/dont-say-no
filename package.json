@@ -19,6 +19,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "canvas-confetti": "^1.9.2"
+    "canvas-confetti": "^1.9.2",
+    "crypto-js": "^4.2.0"
   }
 }

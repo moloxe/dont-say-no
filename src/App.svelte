@@ -2,13 +2,15 @@
   import { onMount } from 'svelte';
   import Button from './lib/Buttons.svelte';
   import confetti from 'canvas-confetti';
+  import CryptoJS from 'crypto-js';
+
   let question = '';
   let input = '';
+  const secret = 'uwu';
 
   function onGo() {
-    window.location.href = `${window.location.pathname}?q=${
-      input || 'Say yes!'
-    }`;
+    const ciphertext = CryptoJS.AES.encrypt(input || 'Say yes!', secret);
+    window.location.href = `${window.location.pathname}?q=${ciphertext}`;
   }
 
   let celebrating = false;
@@ -29,7 +31,10 @@
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
     const q = params.get('q');
-    if (q) question = q;
+    if (q) {
+      const bytes = CryptoJS.AES.decrypt(q, secret);
+      question = bytes.toString(CryptoJS.enc.Utf8);
+    }
   });
 </script>
 
