@@ -59,7 +59,7 @@
   {:else if question}
     <h1 class="font-extrabold text-2xl">{question}</h1>
     <div class="grid grid-cols-2 gap-4">
-      <Button onClick={onYes}>Yes</Button>
+      <Button onClick={onYes} bounce>Yes</Button>
       <DancingButton>No</DancingButton>
     </div>
   {:else}

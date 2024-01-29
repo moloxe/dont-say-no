@@ -45,7 +45,7 @@
   on:click={handleOnClick}
   class={`
     ${dancing ? 'absolute' : ''}
-    animate-bounce bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+    bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
     rounded-lg px-4 py-2 text-lg
   `}
 >
