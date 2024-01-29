@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Button from './lib/Buttons.svelte';
+  import DancingButton from './lib/DancingButton.svelte';
+  import Button from './lib/Button.svelte';
   import confetti from 'canvas-confetti';
 
   let question = '';
@@ -59,7 +60,7 @@
     <h1 class="font-extrabold text-2xl">{question}</h1>
     <div class="grid grid-cols-2 gap-4">
       <Button onClick={onYes}>Yes</Button>
-      <Button dance>No</Button>
+      <DancingButton>No</DancingButton>
     </div>
   {:else}
     <div class="flex gap-4">
